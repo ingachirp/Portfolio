@@ -1,22 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Очистить состояние модального окна при загрузке страницы
+    const modal = document.getElementById("contactModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+
+    // Ваш остальной код
+});
+    
     // Модальное окно
     const modal = document.getElementById("contactModal");
     const btn = document.getElementById("contactButton");
-    const span = document.getElementsByClassName("close")[0];
+    const span = document.querySelector(".close"); // Измените на querySelector
 
     // Открыть модальное окно при нажатии на кнопку
-    btn.onclick = function () {
-        modal.style.display = "block";
+    if (btn) {
+        btn.onclick = function () {
+            if (modal) modal.style.display = "block";
+        }
     }
 
     // Закрыть модальное окно при нажатии на "X"
-    span.onclick = function () {
-        modal.style.display = "none";
+    if (span) {
+        span.onclick = function () {
+            if (modal) modal.style.display = "none";
+        }
     }
 
     // Закрыть модальное окно при нажатии вне его области
     window.onclick = function (event) {
-        if (event.target === modal) {
+        if (modal && event.target === modal) {
             modal.style.display = "none";
         }
     }
@@ -27,17 +40,46 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardItem3 = document.querySelector('.item3');
 
     // Переход на страницу "Dailė" при клике на карточку item1
-    cardItem1.onclick = function () {
-        window.location.href = 'Art_works.html'; // Переход на страницу Dailė
-    };
+    if (cardItem1) {
+        cardItem1.onclick = function () {
+            window.location.href = 'Art_works.html'; // Переход на страницу Dailė
+        };
+    }
 
     // Переход на страницу "Fotografija" при клике на карточку item2
-    cardItem2.onclick = function () {
-        window.location.href = 'Photoart.html'; // Переход на страницу Fotografija
-    };
+    if (cardItem2) {
+        cardItem2.onclick = function () {
+            window.location.href = 'Photoart.html'; // Переход на страницу Fotografija
+        };
+    }
 
     // Переход на страницу "Žvilgsnis į ateitį" при клике на карточку item3
-    cardItem3.onclick = function () {
-        window.location.href = '#'; // Здесь замени на нужную страницу
-    };
-});
+    if (cardItem3) {
+        cardItem3.onclick = function () {
+            window.location.href = '#'; // Здесь замени на нужную страницу
+        };
+    }
+
+    const images = document.querySelectorAll('.gallery-img');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            if (img.classList.contains('expanded')) {
+                // Если картинка уже увеличена, уменьшаем её
+                img.classList.remove('expanded');
+                img.classList.add('shrinked');
+            } else if (img.classList.contains('shrinked')) {
+                // Если картинка уже уменьшена, возвращаем её в исходный размер
+                img.classList.remove('shrinked');
+            } else {
+                // Убираем классы у всех других изображений
+                images.forEach(image => {
+                    image.classList.remove('expanded');
+                    image.classList.remove('shrinked');
+                });
+                // Увеличиваем текущую картинку
+                img.classList.add('expanded');
+            }
+        });
+    });
+
