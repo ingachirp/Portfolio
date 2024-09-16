@@ -5,7 +5,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    font-size: 1rem;
+    font-size: 1.1rem;
     /* Использование rem для шрифта */
 }
 
@@ -16,6 +16,16 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+main, footer {
+    position: relative; /* Устанавливаем позицию относительно фона */
+    z-index: 1; /* Чтобы контент был поверх фона */
+    color: #4E4B66;
+    }
+
+footer {
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон для подвала, если нужно */
 }
 
 header {
@@ -46,7 +56,7 @@ header {
     text-decoration: none;
     /* Body/Regular */
     font-family: Roboto;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -66,10 +76,80 @@ header {
     margin: 0;
 }
 
+* Скрываем модальное окно по умолчанию */
+.modal {
+    display: none;
+    position: fixed; /* Фиксированная позиция, чтобы модальное окно всегда было видно */
+    z-index: 1000; /* Устанавливаем высокий z-index, чтобы окно было поверх остальных элементов */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Прокрутка, если содержимое превышает экран */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+
+/* Содержимое модального окна */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Отступ сверху и по центру экрана */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Устанавливаем ширину 80% от экрана */
+    max-width: 600px; /* Максимальная ширина модального окна */
+    z-index: 1001;
+}
+
+/* Кнопка закрытия */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #005bb5;
+}
+
 h1 {
     font-size: 3rem;
     text-align: center;
     margin-top: 50px;
+    background-color: #f0f0f5;
+    border-radius: 8px;
     color: #4E4B66;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -96,15 +176,132 @@ h1 {
 .my-button:hover {
     background-color: #6B7280;
 }
+.first {
+    background-image: url(trikampis.jpg);
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
 
 section {
-    padding: 60px 20px;
+    padding: 0px;
     background-size: cover;
     background-position: center;
 }
 
+/* Центрируем секцию 1 и добавляем минимальную высоту */
+section:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh; /* Попробуем с 50vh */
+    /* padding: 20px;  */
+}
+
+/* Добавляем 1px границу вокруг изображения и фон */
+section:nth-child(1) img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #f0f0f5; /* 1px граница */
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Центрируем и задаем минимальную высоту для секции 2 */
 section:nth-child(2) {
-    background-color: #f0f0f5; /* Для разделения секций цветом */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* min-height: 80vh; */
+    background-color: #f0f0f5;
+    padding: 16px;
+}
+
+section:nth-child(2) img {
+    width: 100%;
+    height: 100%;
+}
+
+section:nth-child(3),
+section:nth-child(4),
+section:nth-child(5) {
+    display: flex;
+    justify-content: space-between; /* Оставляем как было для этих секций */
+    padding: 20px 0;
+}
+
+section:nth-child(3) .card:hover,
+section:nth-child(4) .card:hover,
+section:nth-child(5) .card:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; /* Плавная анимация */
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column; /* Располагает элементы вертикально */
+    align-items: center; 
+}
+
+.footer-nav ul {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+.footer-nav a {
+    text-decoration: none; /* Убирает подчеркивание у ссылок */
+    color: #4E4B66; /* Белый цвет текста */
+    font-weight: normal; /* Нормальный вес шрифта для ссылок */
+    transition: color 0.3s; /* Плавный переход цвета при наведении */
+}
+
+.footer-nav p {
+    margin: 0; /* Убирает отступы */
+    font-size: 16px; /* Размер шрифта для текста в footer */
+}
+
+.social-media {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    color: #333;
+    font-size: 30px; /* Увеличиваем размер иконок */
+    width: 50px; /* Размер кнопки */
+    height: 50px;
+    border-radius: 50%; /* Делаем иконки круглыми */
+    background-color: #f0f0f5; /* Светлый фон для кнопки */
+    text-align: center;
+    line-height: 50px; /* Выравнивание текста по вертикали */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #0073e6; /* Смена фона при наведении */
+    color: white; /* Белый цвет иконки при наведении */
+}
+
+/* Цвет для Facebook */
+.social-icon .fa-facebook-f {
+    color: #3b5998; /* Цвет для Facebook */
+}
+
+/* Цвет для Instagram */
+.social-icon .fa-instagram {
+    color: #c32aa3; /* Цвет для Instagram */
 }
 
 .parallax {
@@ -121,22 +318,16 @@ section:nth-child(2) {
 }
 
 .text-container {
-    background-color: white; /* Белый фон под текстом */
+    background-color: #f0f0f5; 
     padding: 20px;
     border-radius: 8px; /* Скругленные углы */
-    max-width: 80%; /* Ограничение ширины текста */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для эффекта объема */
 }
 
-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
 .card {
     flex: 1;
+    background-color: #f0f0f5;
     margin: 0 10px;
     border: 1px solid #ccc;
     padding: 20px;
@@ -145,39 +336,39 @@ section {
     text-align: center;
     padding: 20px;
     transition: transform 0.2s ease-in-out;
+    border-radius: 8px;
 }
 
 .card img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Ширина изображения будет подстраиваться под размер контейнера */
+    height: 300px; /* Фиксированная высота */
+    object-fit: cover; /* Сохраняет пропорции, но обрезает изображение, если оно не помещается */
 }
 
 .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Адаптивные колонки */
+    grid-gap: 10px; /* Промежуток между изображениями */
 }
 
-.category {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.gallery-item {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.gallery-item img {
-    max-width: 150px;
+.gallery img {
+    width: 100%;
     height: auto;
-    border: 1px solid #ccc;
-    padding: 5px;
+    border-radius: 8px; /* Закругленные углы */
+    transition: transform 0.3s, z-index 0.3s; /* Анимация при наведении */
 }
 
-.gallery-item p {
-    max-width: 600px;
+.gallery img:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+    cursor: pointer;
+}
+
+.gallery img.expanded {
+    transform: scale(2.0); /* Увеличение при нажатии */
+    z-index: 10; /* Чтобы увеличить картинку выше остальных */
+}
+
+.gallery img.shrinked {
+    transform: scale(0.8); /* Уменьшение при повторном нажатии */
+    z-index: 1;
 }

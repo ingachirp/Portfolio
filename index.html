@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="Pasaulis mano akimis per spalvas ir technologijas">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Ingridos kūrybos akimirkos</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -16,25 +19,38 @@
                 <li><a class="flex-meniu" href="#">Pradinis</a></li>
                 <li><a class="flex-meniu" href="About.html">Apie mane</a></li>
                 <li><a class="flex-meniu" href="Art_works.html">Dailė</a></li>
-                <li><a class="flex-meniu" href="#">Fotografija</a></li>
-                <li><a class="flex-meniu" href="#">Saitų programavimas</a></li>
-                <!-- <li><a class="flex-meniu" href="#">Žvilgsnis į ateitį</a></li> -->
+                <li><a class="flex-meniu" href="Photoart.html">Fotografija</a></li>
+                <li><a class="flex-meniu" href="#">Žvilgsnis į ateitį</a></li>
             </ul>
         </nav>
-        <button class="my-button"> Susisiekite su manimi</button>
-        <!-- <img class="contact-image" src="bars.svg" alt="meniu" />  -->
+        <button id="contactButton" class="my-button"> Susisiekite su manimi</button>
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Susisiekti el. paštu su manimi</h2>
+                <form id="contactForm">
+                    <label for="email">El. paštas:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Laiško tekstas:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button type="submit">Siųsti</button>
+                </form>
+            </div>
         </div>
     </header>
-    <main>
+    <main class="first">
         <h1> Sveiki atvykę į mano kūrybos pasaulį!</h1>
-        <Section 1 >
-            <img src="first_img.jpeg" alt="moteris" width="auto" height="500">
+        <Section 1>
+            <img src="me.jpg" alt="mano foto" width="auto" height="500">
 
         </Section>
-        <section 2 class="parallax">
+        <section 2>
             <div class="text-container">
-            <h2> Apie mane trumpai</h2>
-            <p>Mano vardas Ingrida, įprastai dirbu samdomą darbą. Per savo gyvenimą buvau pardavėja, inžiniere, virėja, konditere, buhaltere ir vadybininke. Tačiau toks darbas atskleidžia tik dalį mano asmenybės. Man patinka kurti: užsiimu dailė, darau nuostabias nuotraukas, kuriu interneto svetaines — tai mano naujas pomėgis. Turiu daug svajonių ateičiai. Čia noriu pristatyti savo darbus, pasidalinti jais su pasauliu ir galbūt rasti bendraminčių. Kam idomu apie mane <a href="About.html">plačiau</a></p>
+                <p>Mano vardas Ingrida, įprastai dirbu samdomą darbą. Per savo gyvenimą buvau pardavėja, inžiniere,
+                    virėja, konditere, buhaltere ir vadybininke. Tačiau toks darbas atskleidžia tik dalį mano asmenybės.
+                    Man patinka kurti: užsiimu dailė, darau nuostabias nuotraukas, kuriu interneto svetaines — tai mano
+                    naujas pomėgis. Turiu daug svajonių ateičiai. Čia noriu pristatyti savo darbus, pasidalinti jais su
+                    pasauliu ir galbūt rasti bendraminčių. Kam idomu apie mane <a href="About.html">plačiau</a></p>
             </div>
         </section>
         <section 3>
@@ -46,26 +62,36 @@
             <div class="card item2">
                 <h2>Fotografija</h2>
                 <p> Akimirkos per objektyvą</p>
-                <img>
+                <img src="Photo/pav18.jpg" alt="fotografija">
             </div>
             <div class="card item3">
-                <h2>Saitų programavimas</h2>
+                <h2>Žvilgsnis į ateitį</h2>
                 <p>Nauja kelionė</p>
-                <img>
+                <img src="first_img.jpeg" alt="ai paveiklsas">
             </div>
         </section>
     </main>
     <footer>
         <nav class="footer-nav">
             <ul>
-              <li><a href="#">Pagrindinis</a></li>
-              <li><a href="#">Apie mane</a></li>
-              <li><a href="#">Dailė</a></li>
-              <li><a href="#">Fotografija</a></li>
-              <li><a href="#">Saitų programavimas</a></li>
-              <li><a href="#">Kontaktai</a></li>
+                <li><a href="#">Pagrindinis</a></li>
+                <li><a href="About.html">Apie mane</a></li>
+                <li><a href="Art_works.html">Dailė</a></li>
+                <li><a href="Photoart.html">Fotografija</a></li>
+                <li><a href="#">Žvilgsnis į ateitį</a></li>
             </ul>
-          </nav>
+            <p>&copy; 2024 Ingrida Gudaitytė</p>
+        </nav>
+        <div class="social-media">
+            <a href="https://www.instagram.com/ingrida_gudaityte/" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/ingrida.gudaityte" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
     </footer>
+    <script src="scripts.js"></script>
 </body>
+
 </html>
