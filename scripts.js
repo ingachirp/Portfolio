@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (cardItem2) {
         cardItem2.onclick = function () {
             window.location.href = 'Photoart.html'; // Переход на страницу Fotografija
-        };
+             };
     }
 
     // Переход на страницу "Žvilgsnis į ateitį" при клике на карточку item3
     if (cardItem3) {
         cardItem3.onclick = function () {
-            window.location.href = '#'; // Здесь замени на нужную страницу
-        };
+            window.location.href = 'Future.html'; // Проверь, чтобы путь был правильным
+            };
     }
 
     const images = document.querySelectorAll('.gallery-img');
@@ -82,4 +82,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Проверка, чтобы функция не конфликтовала с другими
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.meniu');
+
+    // Проверяем, существуют ли элементы на странице
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+    }
+});
+
 

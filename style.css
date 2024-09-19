@@ -9,6 +9,10 @@ body {
     /* Использование rem для шрифта */
 }
 
+.menu-toggle {
+    display: none; /* Скрываем кнопку сэндвича для больших экранов */
+}
+
 /* Основные стили для header и main */
 header,
 main {
@@ -18,14 +22,18 @@ main {
     padding: 0 20px;
 }
 
-main, footer {
-    position: relative; /* Устанавливаем позицию относительно фона */
-    z-index: 1; /* Чтобы контент был поверх фона */
+main,
+footer {
+    position: relative;
+    /* Устанавливаем позицию относительно фона */
+    z-index: 1;
+    /* Чтобы контент был поверх фона */
     color: #4E4B66;
-    }
+}
 
 footer {
-    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон для подвала, если нужно */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Полупрозрачный фон для подвала, если нужно */
 }
 
 header {
@@ -55,7 +63,7 @@ header {
     text-align: center;
     text-decoration: none;
     /* Body/Regular */
-    font-family: Roboto;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -76,27 +84,33 @@ header {
     margin: 0;
 }
 
-* Скрываем модальное окно по умолчанию */
-.modal {
+* Скрываем модальное окно по умолчанию */ .modal {
     display: none;
-    position: fixed; /* Фиксированная позиция, чтобы модальное окно всегда было видно */
-    z-index: 1000; /* Устанавливаем высокий z-index, чтобы окно было поверх остальных элементов */
+    position: fixed;
+    /* Фиксированная позиция, чтобы модальное окно всегда было видно */
+    z-index: 1000;
+    /* Устанавливаем высокий z-index, чтобы окно было поверх остальных элементов */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Прокрутка, если содержимое превышает экран */
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    overflow: auto;
+    /* Прокрутка, если содержимое превышает экран */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачный фон */
 }
 
 /* Содержимое модального окна */
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto; /* Отступ сверху и по центру экрана */
+    margin: 10% auto;
+    /* Отступ сверху и по центру экрана */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Устанавливаем ширину 80% от экрана */
-    max-width: 600px; /* Максимальная ширина модального окна */
+    width: 80%;
+    /* Устанавливаем ширину 80% от экрана */
+    max-width: 600px;
+    /* Максимальная ширина модального окна */
     z-index: 1001;
 }
 
@@ -163,6 +177,7 @@ h1 {
         opacity: 1;
     }
 }
+
 .my-button {
     padding: 10px 20px;
     background-color: #4E4B66;
@@ -176,12 +191,13 @@ h1 {
 .my-button:hover {
     background-color: #6B7280;
 }
+
 .first {
     background-image: url(trikampis.jpg);
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
 }
 
 section {
@@ -196,7 +212,8 @@ section:nth-child(1) {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 50vh; /* Попробуем с 50vh */
+    min-height: 50vh;
+    /* Попробуем с 50vh */
     /* padding: 20px;  */
 }
 
@@ -204,7 +221,8 @@ section:nth-child(1) {
 section:nth-child(1) img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #f0f0f5; /* 1px граница */
+    border: 1px solid #f0f0f5;
+    /* 1px граница */
     border-radius: 8px;
     margin: 0;
     padding: 0;
@@ -230,78 +248,106 @@ section:nth-child(3),
 section:nth-child(4),
 section:nth-child(5) {
     display: flex;
-    justify-content: space-between; /* Оставляем как было для этих секций */
+    justify-content: space-between;
+    /* Оставляем как было для этих секций */
     padding: 20px 0;
 }
 
 section:nth-child(3) .card:hover,
 section:nth-child(4) .card:hover,
 section:nth-child(5) .card:hover {
-    transform: scale(1.05); /* Увеличение при наведении */
+    transform: scale(1.05);
+    /* Увеличение при наведении */
     cursor: pointer;
-    transition: transform 0.2s ease-in-out; /* Плавная анимация */
+    transition: transform 0.2s ease-in-out;
+    /* Плавная анимация */
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #f0f0f5;
+    /* Можно выбрать нужный цвет */
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .footer-nav {
     display: flex;
-    flex-direction: column; /* Располагает элементы вертикально */
-    align-items: center; 
+    flex-direction: row;
+    /* Располагает меню в ряд */
+    gap: 15px;
+    /* Промежуток между пунктами меню */
 }
 
 .footer-nav ul {
     list-style-type: none;
-    margin: 10px 0;
+    margin: 0;
     padding: 0;
     display: flex;
     gap: 20px;
 }
+
 .footer-nav a {
-    text-decoration: none; /* Убирает подчеркивание у ссылок */
-    color: #4E4B66; /* Белый цвет текста */
-    font-weight: normal; /* Нормальный вес шрифта для ссылок */
-    transition: color 0.3s; /* Плавный переход цвета при наведении */
+    text-decoration: none;
+    /* Убирает подчеркивание у ссылок */
+    color: #4E4B66;
+    /* Белый цвет текста */
+    font-size: 16px;
+    font-weight: normal;
+    /* Нормальный вес шрифта для ссылок */
+    transition: color 0.3s;
+    /* Плавный переход цвета при наведении */
 }
 
-.footer-nav p {
-    margin: 0; /* Убирает отступы */
-    font-size: 16px; /* Размер шрифта для текста в footer */
+.footer-nav a:hover {
+    color: #3f0e41;
+    /* Цвет при наведении (можно изменить) */
 }
 
 .social-media {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .social-icon {
-    display: inline-block;
+    font-size: 24px;
     color: #333;
-    font-size: 30px; /* Увеличиваем размер иконок */
-    width: 50px; /* Размер кнопки */
-    height: 50px;
-    border-radius: 50%; /* Делаем иконки круглыми */
-    background-color: #f0f0f5; /* Светлый фон для кнопки */
-    text-align: center;
-    line-height: 50px; /* Выравнивание текста по вертикали */
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .social-icon:hover {
-    background-color: #0073e6; /* Смена фона при наведении */
-    color: white; /* Белый цвет иконки при наведении */
+    color: #0073e6;
+    color: rgb(108, 60, 166);
 }
+
 
 /* Цвет для Facebook */
 .social-icon .fa-facebook-f {
-    color: #3b5998; /* Цвет для Facebook */
+    color: #3b5998;
+    /* Цвет для Facebook */
 }
 
 /* Цвет для Instagram */
 .social-icon .fa-instagram {
-    color: #c32aa3; /* Цвет для Instagram */
+    color: #c32aa3;
+    /* Цвет для Instagram */
+}
+
+.footer-content p {
+    margin: 0;
+    /* Убирает отступы вокруг текста */
 }
 
 .parallax {
@@ -318,11 +364,13 @@ section:nth-child(5) .card:hover {
 }
 
 .text-container {
-    background-color: #f0f0f5; 
+    background-color: #f0f0f5;
     padding: 20px;
-    border-radius: 8px; /* Скругленные углы */
+    border-radius: 8px;
+    /* Скругленные углы */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для эффекта объема */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Легкая тень для эффекта объема */
 }
 
 .card {
@@ -340,35 +388,223 @@ section:nth-child(5) .card:hover {
 }
 
 .card img {
-    width: 100%; /* Ширина изображения будет подстраиваться под размер контейнера */
-    height: 300px; /* Фиксированная высота */
-    object-fit: cover; /* Сохраняет пропорции, но обрезает изображение, если оно не помещается */
+    width: 100%;
+    /* Ширина изображения будет подстраиваться под размер контейнера */
+    height: 300px;
+    /* Фиксированная высота */
+    object-fit: cover;
+    /* Сохраняет пропорции, но обрезает изображение, если оно не помещается */
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Адаптивные колонки */
-    grid-gap: 10px; /* Промежуток между изображениями */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Адаптивные колонки */
+    grid-gap: 10px;
+    /* Промежуток между изображениями */
 }
 
 .gallery img {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Закругленные углы */
-    transition: transform 0.3s, z-index 0.3s; /* Анимация при наведении */
+    border-radius: 8px;
+    /* Закругленные углы */
+    transition: transform 0.3s, z-index 0.3s;
+    /* Анимация при наведении */
 }
 
 .gallery img:hover {
-    transform: scale(1.05); /* Увеличение при наведении */
+    transform: scale(1.05);
+    /* Увеличение при наведении */
     cursor: pointer;
 }
 
 .gallery img.expanded {
-    transform: scale(2.0); /* Увеличение при нажатии */
-    z-index: 10; /* Чтобы увеличить картинку выше остальных */
+    transform: scale(2.0);
+    /* Увеличение при нажатии */
+    z-index: 10;
+    /* Чтобы увеличить картинку выше остальных */
 }
 
 .gallery img.shrinked {
-    transform: scale(0.8); /* Уменьшение при повторном нажатии */
+    transform: scale(0.8);
+    /* Уменьшение при повторном нажатии */
     z-index: 1;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для технологий */
+.technologies {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+/* Стили для целей */
+/* .goals {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f0f0f5;
+} */
+
+/* Стили для карточек */
+.cards {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.cardF {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f5;
+    /* Цвет фона карточки */
+    border: 1px solid #ccc;
+    /* Граница вокруг карточки */
+    border-radius: 8px;
+    /* Скругление углов */
+    overflow: hidden;
+    /* Обрезать содержимое, выходящее за границы карточки */
+    padding: 10px;
+    /* Отступы внутри карточки */
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    margin: 0 10px;
+}
+
+.cardF img,
+.cardF video {
+    width: 100%;
+    /* Занимает всю ширину карточки */
+    height: auto;
+    /* Высота авто для сохранения пропорций */
+    max-height: 300px;
+    /* Максимальная высота для изображений и видео */
+    object-fit: cover;
+    /* Обрезка, чтобы сохранить пропорции */
+    border-radius: 8px;
+    /* Скругленные углы */
+}
+
+.cardF h3,
+.cardF p {
+    margin: 10px 0;
+    /* Отступы сверху и снизу */
+    color: #4E4B66;
+    /* Цвет текста */
+}
+
+/* Обертка для контента карточки */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+    /* Высота для содержимого карточки */
+    padding: 5px;
+    text-align: center;
+}
+
+.cardF:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+
+.goals {
+    padding: 40px 20px;
+    background-image: url('jura.jpg');
+    /* Замените на путь к вашему изображению */
+    background-size: cover;
+    /* Обеспечивает, что изображение полностью покрывает секцию */
+    background-position: center;
+    /* Центрирует изображение */
+    background-repeat: no-repeat;
+    /* Избегает повторения изображения */
+    text-align: center;
+    color: #4E4B66;
+    /* Цвет текста, если фон темный */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 10px;
+}
+
+.dreams {
+    font-size: 1.5em;
+    margin: 0
+    grid-column 2 / 3;
+    grid-row: 1/3;
+}
+
+.grid-container {
+    grid-column: 2 / 3;
+    grid-row: 1/3;
+}
+
+@media (max-width: 768px) {
+    /* Прячем обычное меню на экранах меньше 768px */
+    .meniu {
+        display: none;
+    }
+
+    /* Показываем кнопку "сэндвич" */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Активируем меню при клике на "сэндвич" */
+    .meniu.active {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px; /* Позиционируем меню под хедером */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Настройки для мобильных устройств */
+@media (max-width: 576px) {
+    /* Прячем нижнее меню (кроме соцсетей) */
+    .footer-nav {
+        display: none;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Шрифт остаётся 16px */
+    body {
+        font-size: 16px;
+    }
 }

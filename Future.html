@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Ingridos kūrybos akimirkos</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Lighthouse1.jpg" alt="ikona" style="width: 50px; height: 50px;">
+        </div>
+        <nav class="meniu">
+            <ul>
+                <li><a class="flex-meniu" href="index.html">Pradinis</a></li>
+                <li><a class="flex-meniu" href="About.html">Apie mane</a></li>
+                <li><a class="flex-meniu" href="Art_works.html">Dailė</a></li>
+                <li><a class="flex-meniu" href="Photoart.html">Fotografija</a></li>
+                <li><a class="flex-meniu" href="#">Žvilgsnis į ateitį</a></li>
+            </ul>
+        </nav>
+        <button id="contactButton" class="my-button"> Susisiekite su manimi</button>
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Susisiekti el. paštu su manimi</h2>
+                <form id="contactForm">
+                    <label for="email">El. paštas:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Laiško tekstas:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button type="submit">Siųsti</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Žvilgsnis į ateitį</h1>
+            <div class="text-container">
+            <p>Girdėjau, kad Visata pradeda pildyti tavo svajones ir norus tik tada, kai apie juos jai paskelbi...</p>
+            <p>Šiandien naršote po svetainę, kurią sukūriau pati – nuo idėjos ir turinio iki programavimo. Daugelį metų galvojau, kad būtų šaunu turėti savo puslapį interneto platybėse, ir šiais metais ši svajonė, netikėtai man pačiai, išsipildė.</p>
+            </div>
+        </section>
+        <section class="technologies">
+            <h2>Naujos technologijos ir AI projektai</h2>
+            <p>Po mokyklos, kai rinkausi ką studijuoti, atrodė, kad pasirinkimo nėra. Pasirinkau dirbti su kompiuteriais... Iki šiol nesuprantu savo specialybės pavadinimo. Mus mokė programuoti, taisyti ir prijungti biuro techniką, pasakojo apie kompiuterių vidaus struktūrą ir tinklų kūrimą. Šiandien šios žinios priskiriamos įvairioms profesijoms. Laikui bėgant supratau, kad kompiuteriai – tai tikrai mano sritis, nesvarbu, ar konfigūruoju jų vidaus komponentus, ieškau gedimų, ar naudoju juos kasdieninėms užduotims. Šiandien mane ypač domina dirbtinio intelekto (AI) įrankiai, ir aš aktyviai bandau juos taikyti savo gyvenime. Jau išbandžiau kai kurias platformas, tokias kaip Playground, Freepik, Canva ir kt.</p>
+            <div class="cards">
+                <div class="cardF">
+                    <img src="Playground_pvz.jpg" alt="Playground">
+                    <h3>Playground</h3>
+                    <p>Dirbtinio intelekto platforma, kurioje kūriau paveikslus.</p>
+                </div>
+                <div class="cardF">
+                    <video width="600" controls>
+                        <source src="canva_pvz.mp4" type="video/mp4">
+                    </video>
+                    <h3>Canva</h3>
+                    <p>Naudojau Canvą savo darbų prezentacijai kurti.</p>
+                </div>
+            </div>
+        </section>
+        <sectionf class="goals">
+            <h2 class="dreams">Svajonės...</h2>
+            <div class="grid-container">
+            <p>Gyvenimas verčia suktis ir ieškoti naujų kelių tobulinimui. Tad mano interesai neapsiriboja vien daile ir technologijomis. Svajoju: </p>
+            <ul>
+                <li>Perstatyti namą</li>
+                <li>Organizuoti savo kūrybos parodas</li>
+                <li>Pradėti (ir turėti) savo verslą</li>
+            </ul>
+            <p>Kol kas trūksta laiko, įgūdžių, finansų ir pagalbos.</p>
+            </div>
+        </sectionf>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Pagrindinis</a></li>
+                    <li><a href="About.html">Apie mane</a></li>
+                    <li><a href="Art_works.html">Dailė</a></li>
+                    <li><a href="Photoart.html">Fotografija</a></li>
+                    <li><a href="#">Žvilgsnis į ateitį</a></li>
+                </ul>
+            </nav>
+            <div class="social-media">
+                <a href="https://www.instagram.com/ingrida_gudaityte/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/ingrida.gudaityte" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 Ingrida Gudaitytė</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
