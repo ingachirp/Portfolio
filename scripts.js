@@ -5,26 +5,21 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.display = "none";
     }
 
-    // Ваш остальной код
-});
-    
-    // Модальное окно
-    const modal = document.getElementById("contactModal");
     const btn = document.getElementById("contactButton");
-    const span = document.querySelector(".close"); // Измените на querySelector
+    const span = document.querySelector(".close");
 
     // Открыть модальное окно при нажатии на кнопку
     if (btn) {
         btn.onclick = function () {
             if (modal) modal.style.display = "block";
-        }
+        };
     }
 
     // Закрыть модальное окно при нажатии на "X"
     if (span) {
         span.onclick = function () {
             if (modal) modal.style.display = "none";
-        }
+        };
     }
 
     // Закрыть модальное окно при нажатии вне его области
@@ -39,61 +34,52 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardItem2 = document.querySelector('.item2');
     const cardItem3 = document.querySelector('.item3');
 
-    // Переход на страницу "Dailė" при клике на карточку item1
     if (cardItem1) {
         cardItem1.onclick = function () {
-            window.location.href = 'Art_works.html'; // Переход на страницу Dailė
+            window.location.href = 'Art_works.html';
         };
     }
 
-    // Переход на страницу "Fotografija" при клике на карточку item2
     if (cardItem2) {
         cardItem2.onclick = function () {
-            window.location.href = 'Photoart.html'; // Переход на страницу Fotografija
-             };
+            window.location.href = 'Photoart.html';
+        };
     }
 
-    // Переход на страницу "Žvilgsnis į ateitį" при клике на карточку item3
     if (cardItem3) {
         cardItem3.onclick = function () {
-            window.location.href = 'Future.html'; // Проверь, чтобы путь был правильным
-            };
+            window.location.href = 'Future.html';
+        };
     }
 
+    // Галерея изображений
     const images = document.querySelectorAll('.gallery-img');
-
     images.forEach(img => {
         img.addEventListener('click', () => {
             if (img.classList.contains('expanded')) {
-                // Если картинка уже увеличена, уменьшаем её
                 img.classList.remove('expanded');
                 img.classList.add('shrinked');
             } else if (img.classList.contains('shrinked')) {
-                // Если картинка уже уменьшена, возвращаем её в исходный размер
                 img.classList.remove('shrinked');
             } else {
-                // Убираем классы у всех других изображений
                 images.forEach(image => {
                     image.classList.remove('expanded');
                     image.classList.remove('shrinked');
                 });
-                // Увеличиваем текущую картинку
                 img.classList.add('expanded');
             }
         });
     });
 
-    // Проверка, чтобы функция не конфликтовала с другими
-document.addEventListener('DOMContentLoaded', function() {
+    // Меню "сэндвич"
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.meniu');
 
-    // Проверяем, существуют ли элементы на странице
     if (menuToggle && menu) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             menu.classList.toggle('active');
         });
+    } else {
+        console.error('Элемент .menu-toggle или .meniu не найден');
     }
 });
-
-
